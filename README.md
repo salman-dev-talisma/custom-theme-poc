@@ -4,7 +4,7 @@ POC SaaS app demonstrating tenant-based theming.
 
 ## What this includes
 
-- **Node.js + Express backend** with MariaDB.
+- **Node.js + Express backend** with MariaDB using Sequelize ORM.
 - **React + MUI frontend** with runtime theme application.
 - Database entities:
   - `theme`: primary/secondary/base colors + three font types.
