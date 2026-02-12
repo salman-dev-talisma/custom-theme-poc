@@ -100,9 +100,8 @@ export default function App() {
   }
 
   const muiTheme = useMemo(() => {
-    const fallbackTheme = createTheme();
     if (!themeConfig) {
-      return fallbackTheme;
+      return null;
     }
 
     return createTheme({
@@ -126,6 +125,22 @@ export default function App() {
       shape: { borderRadius: 12 }
     });
   }, [themeConfig]);
+
+  if (!muiTheme) {
+    return (
+      <Box
+        sx={{
+          minHeight: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          bgcolor: '#f5f5f5'
+        }}
+      >
+        <CircularProgress />
+      </Box>
+    );
+  }
 
   return (
     <ThemeProvider theme={muiTheme}>
